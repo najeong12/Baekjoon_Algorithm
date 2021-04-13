@@ -36,7 +36,7 @@ def fun5(N, M, arr):
     m = int(M/2)
     for i in range(N):
         for j in range(M):
-            if (0 <= i < n and 0 <= j <= n):
+            if (0 <= i < n and 0 <= j < m):
                 tmp[i][j] = arr[i + n][j]
             elif (0 <= i < n and j >= m):
                 tmp[i][j] = arr[i][j - m]
@@ -53,7 +53,7 @@ def fun6(N, M, arr):
     m = int(M/2)
     for i in range(N):
         for j in range(M):
-            if (0 <= i < n and 0 <= j <= n):
+            if (0 <= i < n and 0 <= j < m):
                 tmp[i][j] = arr[i][j+m]
             elif (0 <= i < n and j >= m):
                 tmp[i][j] = arr[i+n][j]
@@ -65,7 +65,7 @@ def fun6(N, M, arr):
 
 # 입력받기
 N, M, R = map(int , input().split())
-arr=[[0 for _ in range(8)] for _ in range(6)]
+arr=[[0 for _ in range(M)] for _ in range(N)]
 for i in range(N):
     arr[i] = list(map(int, input().split()))
 fun = list(map(int, input().split()))
